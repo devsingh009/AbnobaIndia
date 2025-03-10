@@ -1,0 +1,86 @@
+﻿<div id="dvPager" style="margin-left: 18px;">
+    @{
+        if (ViewBag.Pagging != null)
+        {
+            var pagerobj = ViewBag.Pagging;
+            <input type="hidden" id="hfConfigurePaging" value="@pagerobj.CurrentPage" data-EndPage="@pagerobj.EndPage" data-TotalPages="@pagerobj.TotalPages" data-StartPage="@pagerobj.StartPage" />
+            if (pagerobj.EndPage > 1)
+            {
+                var url = HttpContext.Current.Request.Url.AbsolutePath;
+                <ul class="pagination">
+                    @if (pagerobj.CurrentPage > 1)
+                    {
+                        <li>
+                            <a href="#" id="btn_1" class="pagers">First</a>
+                        </li>
+                        <li>
+                            <a href="#" id="btn_@(pagerobj.CurrentPage-1)" class="pagers">Previous</a>
+                        </li>
+                    }
+                    @for (var page = pagerobj.StartPage;page <= pagerobj.EndPage;page++)
+                    {
+                        <li class="@(page == pagerobj.CurrentPage ? "active" : "" )">
+                            <a href="#" class="pagers" id="btn_@page">@page</a>
+                        </li>
+                    }
+
+                    @if (pagerobj.CurrentPage < pagerobj.TotalPages)
+                    {
+                        <li>
+                            <a href="#" id="btn_@(pagerobj.CurrentPage + 1)" class="pagers">Next</a>
+
+                        </li>
+                        <li>
+                            <a href="#" id="@(pagerobj.TotalPages)" class="pagers">Last</a>
+                        </li>
+                    }
+                </ul>
+
+            }
+        }
+    }
+</div>
+
+<script type="text/javascript">
+
+    function Pagers(EndPage, CurrentPage, TotalPages, StartPage) {
+        var pgr = '';
+        var prevPage = parseInt(CurrentPage) - parseInt(1);
+        var nextPage = parseInt(CurrentPage) + parseInt(1);
+        if (EndPage > 1)
+        {
+            pgr += '<input type="hidden" id="hfConfigurePaging" value="'+CurrentPage+'" data-EndPage="'+EndPage +'"'+
+                'data-TotalPages="'+TotalPages+'" ' +
+                'data-StartPage="'+StartPage+'" />';
+            pgr+='<ul class="pagination">'
+                if (CurrentPage > 1)
+                {
+                    pgr += '<li><a href="#" id="btn_1" class="pagers">First</a></li>';
+                    pgr += '<li><a href="#" id="btn_' + prevPage+'" class="pagers">Previous</a></li>';
+                }
+                for (var page = StartPage; page <= EndPage; page++)
+                {
+                    var active = '';
+                    if (page == CurrentPage) {
+                        active = 'active';
+                    }
+                    pgr += '<li class="'+active+'">';
+                    pgr += '<a href="#" class="pagers" id="btn_'+page+'">'+page+'</a>';
+                    pgr += '</li>';
+                }
+
+                if (CurrentPage < TotalPages)
+                {
+                    pgr += '<li>';
+                    pgr += '<a href="#" id="btn_'+nextPage+'" class="pagers">Next</a>';
+                    pgr += '</li>';
+                    pgr += '<li>';
+                    pgr += '<a href="#" id="'+TotalPages+'"class="pagers">Last</a>';
+                    pgr += '</li>';
+                }
+            pgr += '</ul>';
+        }
+        $("#dvPager").html(pgr);
+    }
+
+</script>

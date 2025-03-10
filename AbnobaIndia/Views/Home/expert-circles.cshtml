@@ -1,0 +1,533 @@
+﻿
+@{
+    ViewBag.Title = "expertcircles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .innerpage-tite {
+        width: 100%;
+        background-image: url(../images/DoctorsOnlyLogin.jpg);
+        padding-top: 100px;
+        padding-bottom: 150px;
+        margin-top: 67px;
+    }
+</style>
+
+<h2>expertcircles</h2>
+
+<div class="innerpage-tite">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="cta_container d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                    <div class="cta_content">
+                        <div class="cta_title">Doctors Only</div>
+                        <div class="cta_text">Information for Healthcare Professionals</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="intro">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <h4>What is information for healthcare professionals?</h4>
+
+                <img src="../images/doctors-only.jpg" alt="doctors only">
+
+                <p style="padding-top:20px">Information intended for health care professionals contains recommendations and references about a medicinal product that a non-medical expert might incorrectly interpret or misconstrue.</p>
+
+                <p>We are therefore legally obliged to restrict access to such content to members of the healing professions, i.e. to health care professionals. </p>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="layout--tabs login-reg mb-30">
+                    <div class="container">
+                        <div class="nav-tabs-wrapper">
+                            <ul class="nav nav-tabs" id="tabs-title-region-nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" role="tab" href="#block-simple-text-1" aria-selected="false" aria-controls="block-simple-text-1" id="block-simple-text-1-tab">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" role="tab" href="#block-simple-text-2" aria-selected="false" aria-controls="block-simple-text-2" id="block-simple-text-2-tab">Sign up</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="tab-content">
+
+                                    <div id="block-simple-text-1" class="tab-pane active block block-layout-builder block-inline-blockqfcc-blocktype-simple-text" role="tabpanel" aria-labelledby="block-simple-text-1-tab">
+                                        <div class="global-container">
+                                            <div class="login-form">
+                                                <div class="card-body login-bx">
+                                                    <h3 class="card-title">Log in</h3>
+                                                    <div class="card-text">
+                                                        <!--
+                                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                                                        <form>
+                                                           
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail1">Email address</label>
+
+                                                                <input type="email" class="form-control form-control-sm" id="userid" aria-describedby="emailHelp" maxlength="50" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="exampleInputPassword1">Password</label>
+                                                                <a href="#" style="float:right;font-size:12px;">Forgot password?</a>
+                                                                @*@Html.Password("password", "", new { @class = "form-control input-lg bottom-none", @placeholder = "Enter Password", @maxlength = "50", @required = "required" })*@
+
+                                                                <input type="password" class="form-control form-control-sm" id="password" maxlength="10" required>
+                                                            </div>
+                                                                <button type="button" class="btn btn-primary btn-block" id="btnLogin">Sign in</button>
+
+                                                                <div class="sign-up">
+                                                                    Apply for new Password <a href="#">Click here</a>
+                                                                </div>
+                                                           
+                                                            </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="block-simple-text-2" class="tab-pane block block-layout-builder block-inline-blockqfcc-blocktype-simple-text" role="tabpanel" aria-labelledby="block-simple-text-2-tab">
+                                        <div class="global-container">
+                                            <div class="login-form">
+                                                <div class="card-body login-bx">
+                                                    <h3 class="card-title">Sign Up</h3>
+                                                    <div class="card-text">
+                                                        <!--
+                                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                                                        <form>
+
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputFirstName">First Name</label>
+                                                                        <input type="text" class="form-control form-control-sm" id="exampleInputFirstName" aria-describedby="emailHelp" maxlength="30">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputLastName">Last Name</label>
+                                                                        <input type="text" class="form-control form-control-sm" id="exampleInputLastName" aria-describedby="emailHelp" maxlength="30">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">Email address</label>
+                                                                        <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp" maxlength="50">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputPassword1">Password (Min 6 Characters)</label>
+                                                                        <input type="password" class="form-control form-control-sm" id="exampleInputPassword1" maxlength="10">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="">Choose Profession</label>
+                                                                        <select class="form-control" aria-label="Default select example" id="exampleInputProfession">
+
+
+                                                                            <option selected  value="">Select Profession</option>
+                                                                            <option value="Dentist">Dentist</option>
+                                                                            <option value="Industry Employee">Industry Employee</option>
+                                                                            <option value="Pharmacist">Pharmacist</option>
+                                                                            <option value="Physician">Physician</option>
+                                                                            <option value="Student">Student</option>
+                                                                            <option value="Veterinary">Veterinary</option>
+                                                                            <option value="Alternative/Non-medical practitioner">Alternative/Non-medical practitioner</option>
+                                                                            <option value="Bio technician/medical techncian">Bio technician/medical techncian</option>
+                                                                            <option value="Bio chemist">Bio chemist</option>
+                                                                            <option value="Biological/Chemical/Physical technical assist..">Biological/Chemical/Physical technical assist..</option>
+                                                                            
+                                                                            <option value="Non-medical practitioner">Non-medical practitioner</option>
+                                                                            <option value="Children's Nurse">Children's Nurse</option>
+                                                                            <option value="Diabetes Advisor">Diabetes Advisor</option>
+                                                                            <option value="Chiropractic">Chiropractic</option>
+                                                                            <option value="Dietician">Dietician</option>
+                                                                            <option value="Medical Dealer">Medical Dealer</option>
+                                                                            <option value="Medical Educator">Medical Educator</option>
+                                                                            <option value="Medical Journalist">Medical Journalist</option>
+                                                                            <option value="Nursing Scientist">Nursing Scientist</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-sm-12">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-5">
+                                                                            <div class="form-group">
+                                                                                <label for="">Zip Code</label>
+                                                                                <input type="text" class="form-control form-control-sm" id="exampleInputZipCode" aria-describedby="emailHelp" maxlength="6" onkeypress="return isNumberKey(event);">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-7">
+                                                                            <div class="form-group">
+                                                                                <label for="">Country</label>
+                                                                                <select class="form-control" aria-label="Default select example" id="exampleInputCountry">
+                                                                                    <option selected>India</option>
+                                                                                    <option value="America">America</option>
+                                                                                    <option value="Australlia">Australlia</option>
+                                                                                    <option value="Afghanistan">Afghanistan</option>
+                                                                                    <option value="Bangladesh">Bangladesh</option>
+                                                                                    <option value="Bhutan">Bhutan</option>
+                                                                                    <option value="England">England</option>
+                                                                                    <option value="Germany">Germany</option>
+                                                                                    <option value="Japan">Japan</option>
+                                                                                    
+                                                                                    <option value="Maldives">Maldives</option>
+                                                                                    <option value="Nepal">Nepal</option>
+                                                                                    <option value="Pakistan">Pakistan</option>
+                                                                                    <option value="Sri Lanka">Sri Lanka</option>
+
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-5">
+                                                                            <div class="form-group">
+                                                                                <label for="">Discipline</label>
+                                                                                <select class="form-control" aria-label="Default select example" id="exampleInputDiscipline">
+                                                                                    <option selected value="">Select Discipline</option>
+                                                                                    <option value="Dentistry">Dentistry (general)</option>
+                                                                                    <option value="Oral surgery">Oral surgery</option>
+                                                                                    <option value="Orthodontics">Orthodontics</option>
+                                                                                    <option value="Periodontology">Periodontology</option>
+                                                                                    <option value="Reconstructive dentistry">Reconstructive dentistry</option>
+                                                                                    <option value="Without speciality">Without speciality</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-7">
+                                                                            <div class="form-group">
+                                                                                <label for="">Field Of Activity</label>
+                                                                                <select class="form-control" aria-label="Default select example" id="exampleInputFA">
+                                                                                    <option selected  value="">Select</option>
+                                                                                    <option value="Armed forces">Armed forces</option>
+                                                                                    <option value="Charitable organization">Charitable organization | NGO</option>
+                                                                                    <option value="Communication">Communication/agency</option>
+                                                                                    <option value="Dental industry">Dental industry</option>
+                                                                                    <option value="Group practice">Group practice</option>
+                                                                                    <option value="Health insurance">Health insurance</option>
+                                                                                    <option value="Hospital">Hospital</option>
+                                                                                    <option value="Institute">Institute</option>
+                                                                                    <option value="Insurance">Insurance</option>
+                                                                                    <option value="Other">Other</option>
+                                                                                    <option value="Practice">Practice - Practice group</option>
+                                                                                    <option value="Press office">Press office</option>
+                                                                                    <option value="Public authority">Public authority</option>
+                                                                                    <option value="Publishing house">Publishing house</option>
+                                                                                    <option value="Retired">Retired</option>
+                                                                                    <option value="UnEmployed">UnEmployed</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                                    <label class="form-check-label" for="exampleChec">Yes I want to receive <A href="#">DocCheck  bMail</A></label>
+
+                                                                </div>
+
+                                                                <button type="button" class="btn btn-primary btn-block" id="btnRegister">Register</button>
+
+                                                                <div class="col-sm-12 text-center">
+                                                                    <p>By clicking "Register" I accept the <A href="#">Term of User  </A> as well as <a href="#">Privacy Policy</a> </p>
+                                                                </div>
+
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#btnRegister").click(function () {
+            //alert("hi");
+
+            if ($("#exampleInputFirstName").val() == "") {
+                alert('Enter First Name.');
+                $("#exampleInputFirstName").focus();
+                return false;
+            }
+
+            else if ($("#exampleInputLastName").val() == "") {
+                alert('Enter Last Name');
+                $("#exampleInputLastName").focus();
+                return false;
+            }
+            else if ($("#exampleInputEmail1").val() == "") {
+                alert('Enter Email ID');
+                $("#exampleInputEmail1").focus();
+                return false;
+            }
+            else if (!ValidateEmail($("#exampleInputEmail1").val())) {
+                alert("Enter Valid Email Address");
+                $("#exampleInputEmail1").focus();
+                return false;
+            }
+
+            else if ($("#exampleInputPassword1").val() == "") {
+                alert('Enter Password');
+                $("#exampleInputPassword1").focus();
+                return false;
+            }
+            else if ($("#exampleInputProfession").val() == "") {
+                alert('Select Profession');
+                $("#exampleInputProfession").focus();
+                return false;
+            }
+            else if ($("#exampleInputZipCode").val() == "") {
+                alert('Enter ZipCode');
+                $("#exampleInputZipCode").focus();
+                return false;
+            }
+            else if ($("#exampleInputCountry").val() == "") {
+                alert('Select Country');
+                $("#exampleInputCountry").focus();
+                return false;
+            }
+            else if ($("#exampleInputDiscipline").val() == "") {
+                alert('Select Discipline');
+
+                $("#exampleInputDiscipline").focus();
+                return false;
+            }
+            else if ($("#exampleInputFA").val() == "") {
+                alert('Select Field of Activity');
+                $("#exampleInputFA").focus();
+                return false;
+            }
+
+            else if ($("#exampleCheck1").prop("checked") == false) {
+                alert('Please accept terms and condition');
+                return false;
+            }
+            else if ($("#exampleInputPassword1").val().length < 6) {
+                alert('Password must be 6 digit long');
+                $("#exampleInputPassword1").focus();
+                return false;
+            }
+            else if ($("#exampleInputZipCode").val().length < 6) {
+                alert('Zipcode must be 6 digit long');
+                $("#exampleInputZipCode").focus();
+                return false;
+            }
+            var objUserLogin = {
+                FirstName: $("#exampleInputFirstName").val(),
+                LastName: $("#exampleInputLastName").val(),
+                EmailId: $("#exampleInputEmail1").val(),
+                MobileNo: $("#txtName").val(),
+                //UserName: $("#txtName").val(),
+                Password: $("#exampleInputPassword1").val(),
+                Zip: $("#exampleInputZipCode").val(),
+                Country: $("#exampleInputCountry").val(),
+                Profession: $("#exampleInputProfession").val(),
+                Discipline: $("#exampleInputDiscipline").val(),
+                FieldOfActivity: $("#exampleInputFA").val(),
+                WantToReceiveDocEmail: $("#exampleCheck1").val(),
+
+            };
+            $.ajax({
+                type: 'post',
+                url: '@Url.Action("SignUp","Home")',
+                dataType: 'json',
+                data: "{'objUserLogin': " + JSON.stringify(objUserLogin) + " }",
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (parseInt(data) == 1) {
+                        alert("User registered successfully");
+                        ClearForm();
+                        //window.location = "/Home/Index";
+                    }
+                    else if (parseInt(data) == 2) {
+                        alert("User already registered");
+
+                    }
+                    else {
+                        alert("Oops!Something went wrong.Please try again.");
+                    }
+
+                }
+            });
+            //}
+
+        });
+
+        $("#btnLogin").click(function () {
+            var userId = $("#userid").val();
+            var password = $("#password").val();
+            if (userId == "") {
+                alert("Please Enter UserId");
+                return false;
+            }
+            else if (!ValidateEmail(userId)) {
+                alert("Enter Valid Email Address");
+                $("#userid").focus();
+                return false;
+            }
+             else if (password == "") {
+                 alert("Please Enter Password");
+                 return false;
+            }
+            //else {
+                var objUserLogin = {
+                    
+                    UserName: $("#userid").val(),
+                    Password: $("#password").val(),
+                   
+
+                };
+             $.ajax({
+                 type: 'post',
+                 url: '@Url.Action("UserLogin", "Home")',
+                 dataType: 'json',
+                 ///data: "{'objUserLogin': " + JSON.stringify(objUserLogin) + " }",
+                 data: { objUserLogin: objUserLogin},
+                //contentType: 'application/json; charset=utf-8',
+                      success: function (result) {
+                          //debugger;
+                          //alert(result);
+                         
+                          if (result == 1) {
+                              var url = "/home/Information"
+                              window.location.href = url;
+                    }
+                          if (result == 2) {
+                        alert("Invalid Password");
+                    }
+                          if (result == 3) {
+                        alert("user not Exists");
+                    }
+                          if (result == 4) {
+                        alert('inactive user');
+                    }
+                          if (result == 5) {
+                        alert('you are not authorized');
+                    }
+                          if (result == 6) {
+                        alert('user not registered');
+                    }
+                    //else {
+                    //    alert("Oops!Something went wrong.Please try again.");
+                    //}
+
+                }
+            });
+                @*$.ajax({
+                    type: 'post',
+                    url: '@Url.Action("UserLogin", "Home")',
+                    dataType: 'json',
+                    data: { userId: userId, password: password } ,
+                    //contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        alert(data);
+                    if (data== 1) {
+                        location.reload("~/Home/Index");
+                    }
+                    if (data == 2) {
+                        alert("Invalid Password");
+                    }
+                    if (data == 3) {
+                        alert("user not Exists");
+                    }
+                    if (data == 4) {
+                        alert('inactive user');
+                    }
+                    if (data == 5) {
+                        alert('you are not authorized');
+                    }
+                    if (data == 6) {
+                        alert('user not registered');
+                    }
+                    else {
+                        alert("Oops!Something went wrong.Please try again.");
+                    }
+
+                }
+            });*@
+
+            //}
+        });
+    });
+
+
+
+    function ClearForm() {
+        $("#exampleInputFirstName").val('');
+        $("#exampleInputLastName").val('');
+        $("#exampleInputEmail1").val('');
+        $("#exampleInputPassword1").val('');
+        $("#exampleInputZipCode").val('');
+        $("#exampleInputCountry").val('');
+        $("#exampleInputProfession").val('');
+        $("#exampleInputDiscipline").val('');
+        $("#exampleInputFA").val('');
+        $("#exampleCheck1").val('');
+    }
+    function ValidateEmail(txtemail) {
+        var emailExp = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+        return emailExp.test(txtemail);
+    };
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+</script>
+
+
+
+
+
+

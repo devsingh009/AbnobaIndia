@@ -1,0 +1,127 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Abnoba India: Admin Login</title>
+    <link rel="stylesheet" href="~/Content/AdminCSS/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/AdminCSS/style.css">
+    <style>
+        .login {
+            margin: auto;
+            border-radius: 5px;
+            width: 25%;
+            border: solid 1px #e8e6e6;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .brand-logo {
+            margin: 20px 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container-scroller">
+
+        <div class="container-fluid page-body-wrapper">
+            <div class="login">
+                <img class="brand-logo" src="../images/logo.png">
+                <form>
+                  
+                    <div class="form-group">
+                        @Html.TextBox("userid", "", new { @class = "form-control", @placeholder = "Your Email *", @maxlength = "50", @required = "required" })
+
+                        @*<input type="text" class="form-control" placeholder="Your Email *" value="" />*@
+                    </div>
+                    <div class="form-group">
+                        @Html.Password("password", "", new { @class = "form-control input-lg bottom-none", @placeholder = "Enter Password", @maxlength = "50", @required = "required" })
+
+                        @*<input type="password" class="form-control" placeholder="Your Password *" value="" />*@
+                    </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success" value="Login" id="btnLogin" >Submit</button>
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Forget Password?</a>
+                        </div>
+            
+                    </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/AdminJS/vendor.bundle.base.js"></script>
+    <script src="~/Content/AdminJS/vendor.bundle.addons.js"></script>
+    <script src="~/Content/AdminJS/jquery.easyResponsiveTabs.js"></script>
+    <script src="~/Content/AdminJS/off-canvas.js"></script>
+    <script src="~/Content/AdminJS/misc.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Content/AdminJS/dashboard.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    //$(document).ready(function () {
+        $("#btnLogin").click(function () {
+            var userId = $("#userid").val();
+            var password = $("#password").val();
+            if (userId == "") {
+                alert("Please Enter UserId");
+                return false;
+            }
+            else if (password == "") {
+                alert("Please Enter Password")
+                return false;
+
+            }
+            else {
+                var objlogin = {
+                    UserId: $("#userid").val(),
+                    Password: $("#password").val(),
+                };
+
+                $.ajax({
+                    type: 'post',
+                    //url: "/Admin/AdminLogins",
+                    url: "@Url.Action("AdminLogins", "Login")",
+                    dataType: 'json',
+
+                    //data: '{"objbAdminLogin":' + JSON.stringify(objlogin) + '}',
+                    data: {objbAdminLogin:objlogin},
+                    //contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        if (response == 1) {
+
+                            var url = "/Admin/Admin/Index";
+
+                            window.location.href = url;
+
+                        }
+                        else if (response == -1) {
+                            alert("Invalid Password");
+                        }
+                        else {
+                            alert("Invalid user");
+                        }
+
+                    },
+                    failure: function (response) {
+                        alert: (response.responseText);
+                    },
+                    error: function (response) {
+                        alert: (response.responseText);
+                    },
+                });
+            }
+        });
+    //})
+
+</script>

@@ -1,0 +1,328 @@
+﻿
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="innerpage-tite">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="cta_container d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                    <div class="cta_content">
+                        <div class="cta_title">Doctors Only</div>
+                        <div class="cta_text">Information for Healthcare Professionals</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="intro">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <h3>What is information for healthcare professionals?</h3>
+
+                <img src="../images/doctors-only.jpg">
+
+                <p>Information intended for health care professionals contains recommendations and references about a medicinal product that a non-medical expert might incorrectly interpret or misconstrue.</p>
+
+                <p>We are therefore legally obliged to restrict access to such content to members of the healing professions, i.e. to health care professionals. </p>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="layout--tabs login-reg mb-30">
+                    <div class="container">
+                        <div class="nav-tabs-wrapper">
+                            <ul class="nav nav-tabs" id="tabs-title-region-nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" role="tab" href="#block-simple-text-1" aria-selected="false" aria-controls="block-simple-text-1" id="block-simple-text-1-tab">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" role="tab" href="#block-simple-text-2" aria-selected="false" aria-controls="block-simple-text-2" id="block-simple-text-2-tab">Sign up</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="tab-content">
+
+                                    <div id="block-simple-text-1" class="tab-pane active block block-layout-builder block-inline-blockqfcc-blocktype-simple-text" role="tabpanel" aria-labelledby="block-simple-text-1-tab">
+                                        <div class="global-container">
+                                            <div class="login-form">
+                                                <div class="card-body login-bx">
+                                                    <h3 class="card-title">Log in</h3>
+                                                    <div class="card-text">
+                                                        <!--
+                                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                                                        <form>
+
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail1">Email address</label>
+                                                                <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="exampleInputPassword1">Password</label>
+                                                                <a href="#" style="float:right;font-size:12px;">Forgot password?</a>
+                                                                <input type="password" class="form-control form-control-sm" id="exampleInputPassword1">
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+
+                                                            <div class="sign-up">
+                                                                Apply for new Password <a href="#">Click here</a>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="block-simple-text-2" class="tab-pane block block-layout-builder block-inline-blockqfcc-blocktype-simple-text" role="tabpanel" aria-labelledby="block-simple-text-2-tab">
+                                        <div class="global-container">
+                                            <div class="login-form">
+                                                <div class="card-body login-bx">
+                                                    <h3 class="card-title">Sing Up</h3>
+                                                    <div class="card-text">
+                                                        <!--
+                                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                                                        <form>
+
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputFirstName">First Name</label>
+                                                                        <input type="email" class="form-control form-control-sm" id="exampleInputFirstName" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputLastName">Last Name</label>
+                                                                        <input type="email" class="form-control form-control-sm" id="exampleInputLastName" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputEmail1">Email address</label>
+                                                                        <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputPassword1">Password (Min 6 Characters)</label>
+                                                                        <input type="password" class="form-control form-control-sm" id="exampleInputPassword1">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="exampleInputProfession">Choose Profession</label>
+                                                                        <select class="form-control" aria-label="Default select example">
+
+
+                                                                            <option selected>India</option>
+                                                                            <option value="1">America</option>
+                                                                            <option value="2">England</option>
+                                                                            <option value="3">France</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-sm-12">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-5">
+                                                                            <div class="form-group">
+                                                                                <label for="">Zip COde</label>
+                                                                                <input type="number" class="form-control form-control-sm" id="" aria-describedby="emailHelp">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-7">
+                                                                            <div class="form-group">
+                                                                                <label for="">Country</label>
+                                                                                <select class="form-control" aria-label="Default select example">
+                                                                                    <option selected>India</option>
+                                                                                    <option value="1">America</option>
+                                                                                    <option value="2">England</option>
+                                                                                    <option value="3">France</option>
+
+
+
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <div class="col-sm-12">
+                                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                                    <label class="form-check-label" for="exampleCheck1">Yes I want to receive <A href="#">DocCheck  bMail</A></label>
+
+                                                                </div>
+
+                                                                <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+                                                                <div class="col-sm-12 text-center">
+                                                                    <p>By clicking "Register" I accept the <A href="#">Term of User  </A> as well as <a href="#">Privacy Policy</a> </p>
+                                                                </div>
+
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+<div class="cta">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="cta_container d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                    <div class="cta_content">
+                        <div class="cta_title">Make your appointment today!</div>
+                        <div class="cta_text">Etiam ac erat ut enim maximus accumsan vel ac nisl</div>
+                    </div>
+                    <div class="cta_phone ml-lg-auto">+34 586 778 8892</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+var tabsActions = function (element) {
+  this.element = $(element);
+
+  this.setup = function () {
+    if (this.element.length <= 0) {
+      return;
+    }
+    this.init();
+    // Update after resize window.
+    var resizeId = null;
+    $(window).resize(function () {
+      clearTimeout(resizeId);
+      resizeId = setTimeout(() => {this.init()}, 50);
+    }.bind(this));
+  };
+
+  this.init = function () {
+
+    // Add class to overflow items.
+    this.actionOverflowItems();
+    var tabs_overflow = this.element.find('.overflow-tab');
+
+    // Build overflow action tab element.
+    if (tabs_overflow.length > 0) {
+      if (!this.element.find('.overflow-tab-action').length) {
+        var tab_link = $('<a>')
+          .addClass('nav-link')
+          .attr('href', '#')
+          .attr('data-toggle', 'dropdown')
+          .text('...')
+          .on('click', function (e) {
+            e.preventDefault();
+            $(this).parents('.nav.nav-tabs').children('.nav-item.overflow-tab').toggle();
+          });
+
+        var overflow_tab_action = $('<li>')
+          .addClass('nav-item')
+          .addClass('overflow-tab-action')
+          .append(tab_link);
+
+        // Add hide to overflow tabs when click on any tab.
+        this.element.find('.nav-link').on('click', function (e) {
+          $(this).parents('.nav.nav-tabs').children('.nav-item.overflow-tab').hide();
+        });
+        this.element.append(overflow_tab_action);
+      }
+
+      this.openOverflowDropdown();
+    }
+    else {
+      this.element.find('.overflow-tab-action').remove();
+    }
+ };
+
+  this.openOverflowDropdown = function () {
+    var overflow_sum_height = 0;
+    var overflow_first_top = 41;
+
+    this.element.find('.overflow-tab').hide();
+    // Calc top position of overflow tabs.
+    this.element.find('.overflow-tab').each(function () {
+      var overflow_item_height = $(this).height() - 1;
+      if (overflow_sum_height === 0) {
+        $(this).css('top', overflow_first_top + 'px');
+        overflow_sum_height += overflow_first_top + overflow_item_height;
+      }
+      else {
+        $(this).css('top', overflow_sum_height + 'px');
+        overflow_sum_height += overflow_item_height;
+      }
+
+    });
+  };
+
+  this.actionOverflowItems = function () {
+    var tabs_limit = this.element.width() - 100;
+    var count = 0;
+
+    // Calc tans width and add class to any tab that is overflow.
+    for (var i = 0; i < this.element.children().length; i += 1) {
+      var item = $(this.element.children()[i]);
+      if (item.hasClass('overflow-tab-action')) {
+        continue;
+      }
+
+      count += item.width();
+      if (count > tabs_limit) {
+        item.addClass('overflow-tab');
+      }
+      else if (count < tabs_limit) {
+        item.removeClass('overflow-tab');
+        item.show();
+      }
+    }
+  };
+};
+
+var tabsAction = new tabsActions('.layout--tabs .nav-tabs-wrapper .nav-tabs');
+tabsAction.setup();
+
+</script>
+

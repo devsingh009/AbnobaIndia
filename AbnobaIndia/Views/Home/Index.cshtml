@@ -1,0 +1,227 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="home">
+@Html.Partial("~/Views/Shared/_HomeBanner.cshtml")
+</div>
+
+<div class="intro">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 intro_col">
+                <div class="intro_content">
+                    <div class="section_title_container">
+                        <div class="section_subtitle">About</div>
+                        <div class="section_title"><h2>ABNOBA India</h2></div>
+                    </div>
+                    <div class="intro_text">
+                        <p>
+                            ABNOBA GmbH is an independent, medium-sized, research-based pharmaceutical manufacturer based in Pforzheim, Germany.
+                            The partners of ABNOBA GmbH are exclusively non-profit organisations. The profits from our company are therefore particularly channelled into cancer research.  Oncology patients are the focus of our activity.
+                            ABNOBA GmbH is one of the world’s leading and most innovative companies in the field of herbal medicinal products for oncology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 intro_col">
+                <div class="intro_form_container">
+                    <div class="intro_form_title">Have a Query?</div>
+                    <form action="#" class="intro_form" id="intro_form">
+                        <div class="d-flex flex-row align-items-start justify-content-between flex-wrap">
+                            <input type="text" class="intro_input" placeholder="Your Name" required>
+                            <input type="email" class="intro_input" placeholder="Your E-mail" required>
+                            <input type="tel" class="intro_input" placeholder="Your Phone" required>
+                            <input type="text" class="intro_input" placeholder="Your Country" required>
+                            <!--<select class="intro_select intro_input" required>
+                            <option disabled selected value="">Speciality</option>
+                            <option>Speciality 1</option>
+                            <option>Speciality 2</option>
+                            <option>Speciality 3</option>
+                            <option>Speciality 4</option>
+                            <option>Speciality 5</option>
+                            </select>-->
+
+                            <input type="text" class="intro_input" style="width: 100%;" placeholder="City & Address" required>
+<textarea type="text" class="intro_input" style="width: 100%;height:60px" placeholder="Type Your Query" required></textarea>
+                        </div>
+                        <button class="button button_1 intro_button trans_200">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="why">
+
+    <div class="container">
+        <div class="row row-eq-height">
+
+            <div class="col-lg-6 order-lg-1 order-2">
+                <div class="why_image_container">
+                    <div class="why_image"><img src="../images/why_1.jpg" alt=""></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 order-lg-2 order-1">
+                <div class="why_content">
+                    <div class="section_title_container">
+                        <div class="section_title"><h2>Why choose us?</h2></div>
+                    </div>
+                    <div class="why_text">
+                        <p>We are the authorized pharmaceutical distributors/ suppliers to different government hospitals, institutions, private hospitals, nursing homes, retailers, wholesalers and also to the patients directly under valid drug licenses issued by the Drugs Control Department Govt. of India.</p>
+                    </div>
+                    <div class="why_list">
+                        <ul>
+
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="icon_container d-flex flex-column align-items-center justify-content-center">
+                                    <div class="icon"><img src="../images/icon_1.svg" alt="https://www.flaticon.com/authors/prosymbols"></div>
+                                </div>
+                                <div class="why_list_content">
+                                    <div class="why_list_title">leading pharmaceutical</div>
+                                    <div class="why_list_text">leading pharmaceutical distributors of Delhi</div>
+                                </div>
+                            </li>
+
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="icon_container d-flex flex-column align-items-center justify-content-center">
+                                    <div class="icon"><img src="../images/icon_2.svg" alt="https://www.flaticon.com/authors/prosymbols"></div>
+                                </div>
+                                <div class="why_list_content">
+                                    <div class="why_list_title">Authorized Distributors</div>
+                                    <div class="why_list_text">Authorized distributors of Indian and multinational companies</div>
+                                </div>
+                            </li>
+
+                            <li class="d-flex flex-row align-items-center justify-content-start">
+                                <div class="icon_container d-flex flex-column align-items-center justify-content-center">
+                                    <div class="icon"><img src="../images/icon_3.svg" alt="https://www.flaticon.com/authors/prosymbols"></div>
+                                </div>
+                                <div class="why_list_content">
+                                    <div class="why_list_title">40 years of experience</div>
+                                    <div class="why_list_text">more that 40 years of experience in dealing with quality medicines.</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cta">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="cta_container d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                    <div class="cta_content">
+                        <div class="cta_title">Reach us for any query!</div>
+                        <div class="cta_text">We will happy to answer your queries</div>
+                    </div>
+                    <div class="cta_phone ml-lg-auto">+91-11-239 176 88</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="services">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title_container">
+                    <div class="section_title"><h2>Patient</h2></div>
+                </div>
+            </div>
+        </div>
+        <div class="service-bx mt-30">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="service-img">
+                        <img src="../images/Apfelbaum.jpg" alt="Apfelbaum">
+                    </div>
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="services-title">
+                        <h3>Mistletoe Therapy </h3>
+                        <p>Mistletoe is a semi parasitic plant that grows on several types of trees such as apple,ash,Oak, Pine and fir. Mistletoe is one of the most widely studied complementary and alternative..</p>
+
+                        <p>
+                            – Patient information<br>
+                            – Frequently asked questions and<br>
+                            – abnoba VISCUM products and package insert<br>
+                        <p>
+                            <div class="button button_1 readmore trans_200"><a href="../patient/mistletoe-therapy">read more</a></div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="extra">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="../images/extra.jpg" data-speed="0.8"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="extra_container d-flex flex-row align-items-start justify-content-end">
+                    <div class="extra_content">
+                        <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
+                            <div>Abnoba India</div>
+                        </div>
+                        <div class="extra_title"> Mistletoe Therapy</div>
+                        <div class="extra_text">
+                            <p>Mistletoe is a semi parasitic plant that grows on several types of trees such as apple,ash,Oak, Pine and fir. Mistletoe is one of the most widely studied ...</p>
+                        </div>
+                        <div class="button button_1 extra_link trans_200"><a href="../patient/mistletoe-therapy">read more</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="extra_container d-flex flex-row align-items-start justify-content-end">
+                    <div class="extra_content">
+                        <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
+                            <div>Abnoba India</div>
+                        </div>
+                        <div class="extra_title">Mistletoe therapy Patient information</div>
+                        <div class="extra_text">
+                            <p>Mistletoe therapy Patient information printed booklet can be ordered at ABNOBA GmbH free of charge ...</p>
+                        </div>
+                        <div class="button button_1 extra_link trans_200"><a href="../patient/mistletoe-therapy-patient-information">read more</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="extra_container d-flex flex-row align-items-start justify-content-end">
+                    <div class="extra_content">
+                        <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
+                            <div>Abnoba India</div>
+                        </div>
+                        <div class="extra_title">Frequently Asked Questions</div>
+                        <div class="extra_text">
+                            <p>Therapy can be started before the beginning of what are known as standard therapies...</p>
+                        </div>
+                        <div class="button button_1 extra_link trans_200"><a href="../patient/faq">read more</a></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

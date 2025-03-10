@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <h4 class="title-main text-uppercase">Registration Details </h4>
+    <div class="row" style="padding:20px">
+        
+            <div class="col-sm-3">
+                <label>Search by Name</label>
+                <input type="text" class="form-control" id="exampleInputName" />
+            </div>
+            <div class="col-sm-3">
+                <label for="">Profession</label>
+                <select class="form-control" aria-label="Default select example" id="exampleInputProfession">
+
+                    <option selected value="">Select Profession</option>
+                    <option value="Dentist">Dentist</option>
+                    <option value="Industry Employee">Industry Employee</option>
+                    <option value="Pharmacist">Pharmacist</option>
+                    <option value="Physician">Physician</option>
+                    <option value="Student">Student</option>
+                    <option value="Veterinary">Veterinary</option>
+                    <option value="Non-medical practitioner">Alternative/Non-medical practitioner</option>
+                    <option value="Bio technician">Bio technician/medical techncian</option>
+                    <option value="Bio chemist">Bio chemist</option>
+                    <option value="Physical technical assist">Biological/Chemical/Physical technical assist..</option>
+
+                    <option value="Non-medical practitioner">Non-medical practitioner</option>
+                    <option value="Children's Nurse">Children's Nurse</option>
+                    <option value="Diabetes Advisor">Diabetes Advisor</option>
+                    <option value="Chiropractic">Chiropractic</option>
+                    <option value="Dietician">Dietician</option>
+                    <option value="Medical Dealer">Medical Dealer</option>
+                    <option value="Medical Educator">Medical Educator</option>
+                    <option value="Medical Journalist">Medical Journalist</option>
+                    <option value="Nursing Scientist">Nursing Scientist</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <label for="">Discipline</label>
+                <select class="form-control" aria-label="Default select example" id="exampleInputDiscipline">
+                    <option value="" selected>Select Discipline</option>
+                    <option value="Dentistry">Dentistry (general)</option>
+                    <option value="Oral surgery">Oral surgery</option>
+                    <option value="Orthodontics">Orthodontics</option>
+                    <option value="Periodontology">Periodontology</option>
+                    <option value="econstructive dentistry">Reconstructive dentistry</option>
+                    <option value="without speciality">Without speciality</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <label for="">Field Of Activity</label>
+                <select class="form-control" aria-label="Default select example" id="exampleInputFA">
+                    <option selected value="">Select</option>
+                    <option value="Armed forces">Armed forces</option>
+                    <option value="Charitable organization">Charitable organization | NGO</option>
+                    <option value="Communication">Communication/agency</option>
+                    <option value="Dental industry">Dental industry</option>
+                    <option value="Group practice">Group practice</option>
+                    <option value="Health insurance">Health insurance</option>
+                    <option value="Hospital">Hospital</option>
+                    <option value="Institute">Institute</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Other">Other</option>
+                    <option value="Practice">Practice - Practice group</option>
+                    <option value="Press office">Press office</option>
+                    <option value="Public authority">Public authority</option>
+                    <option value="Publishing house">Publishing house</option>
+                    <option value="Retired">Retired</option>
+                    <option value="UnEmployed">UnEmployed</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-info" id="btnSearch" style="margin-top:30px;"> Search</button>
+            </div>
+        
+    </div>
+        <br />
+        <div class="col-sm-12 approve-leavs">
+            <div class="table-responsive leaves" id="ShowDetails">
+
+            </div>
+            @*@Html.Partial("~/Views/Shared/_Pager.cshtml")*@
+        </div>
+
+    </div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var Page = 1;
+        var Name = $("#exampleInputName").val();
+        var Profession = $("#exampleInputProfession").val();
+        var Discipline = $("#exampleInputDiscipline").val();
+        var FOA = $("#exampleInputFA").val();
+
+
+        ShowRecord(Name, Profession, Discipline, FOA, Page);
+
+
+        $(document).on("click", ".pagers", function () {
+
+            var page = $(this).attr("id").replace("btn_", "");
+            var Name = $("#exampleInputName").val();
+            var Profession = $("#exampleInputProfession").val();
+            var Discipline = $("#exampleInputDiscipline").val();
+            var FOA = $("#exampleInputFA").val();
+            ShowRecord(Name, Profession, Discipline, FOA, page);
+            var startPage = $("#hfConfigurePaging").attr('data-StartPage');
+            var CurrentPage = page;
+            var TotalPages = $("#hfConfigurePaging").attr('data-TotalPages');
+            var EndPage = $("#hfConfigurePaging").attr('data-EndPage');
+            Pagers(EndPage, CurrentPage, TotalPages, startPage);
+        });
+
+        $("#btnSearch").click(function () {
+            var Name = $("#exampleInputName").val();
+            var Profession = $("#exampleInputProfession").val();
+            var Discipline = $("#exampleInputDiscipline").val();
+            var FOA = $("#exampleInputFA").val();
+            var Page = 1;
+            ShowRecord(Name, Profession, Discipline, FOA, Page);
+        });
+
+        /**************Fliter Click Event**********************/
+
+
+
+
+    })
+
+    function ShowRecord(Name, Profession, Discipline, FOA,Page) {
+            $.ajax({
+                type: "Get",
+                url: '@Url.Action("GetUserDetails", "Admin")',
+                data: { Name: Name, Profession: Profession,Discipline:Discipline,FOA:FOA, Page: Page },
+                datatype: 'json',
+                async: false,
+                success: function (data) {
+                    $("#ShowDetails").html(data);
+                }
+            });
+    }
+
+
+
+</script>

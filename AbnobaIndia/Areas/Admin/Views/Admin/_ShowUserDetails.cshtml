@@ -1,0 +1,104 @@
+﻿<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Created On</th>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>ZipCode</th>
+            <th>Country</th>
+            <th>Profession</th>
+            <th>Discipline</th>
+            <th>Field Of Activities</th>
+            <th>IsActive</th>
+            <th>Login Allowed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CreatedOn.ToString("dd/MM/yyyy")</td>
+                    <td>@item.UserName</td>
+                    <td>@item.FirstName  @item.LastName</td>
+                    <td>@item.Password</td>
+                    <td>@item.Zip</td>
+                    <td>@item.Country</td>
+                    <td>@item.Profession</td>
+                    <td>@item.Discipline</td>
+                    <td>@item.FieldOfActivity</td>
+                    <td>@item.IsActive</td>
+                    <td>
+                        @if (item.LoginAllowed == true)
+                        {
+                            <button class="click btn btn-info" data-app-id="@item.UserId" data-bind="@item.LoginAllowed" user="@item.FirstName  @item.LastName" username="@item.UserName" password="@item.Password">Yes</button>
+                        }
+                        else
+                        {
+
+                            <button href="#" class="click btn btn-info" data-app-id="@item.UserId" data-bind="@item.LoginAllowed" user="@item.FirstName  @item.LastName" username="@item.UserName" password="@item.Password">No</button>
+                        }
+                    </td>
+
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="10" style="color:red;">NO RECORD FOUND</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+@Html.Partial("~/Views/Shared/_Pager.cshtml")
+
+<script>
+    $('.click').click(function (e) {
+            var Id = $(this).attr("data-app-id");
+            var statusVal = $(this).attr("data-bind");
+        var user = $(this).attr("user");
+        var username = $(this).attr("username");
+        var password = $(this).attr("password");
+            var thisAnchor = $(this);
+            var thisAnchorVal = $(this).html();
+            e.preventDefault();
+            $.ajax({
+                url: '@Url.Action("ChangeLoginStatus")',
+                type: "POST",
+                dataType: "json",
+
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                data: "{'status':'" + statusVal + "','id':" + parseInt(Id) + ",'user':'" + user + "','username':'" + username + "','password':'" + password + "'}",
+                beforeSend: function (data) {
+                    $("#dvLoader").show();
+                },
+                success: function (data) {
+                    if (data != null || data != '' ) {
+                        alert(data);
+                        location.reload();
+                    }
+                    else {
+                        alert('OOps!Something went wrong');
+                    }
+
+
+                },
+                complete: function (data) {
+                    $("#dvLoader").hide();
+                },
+                error: function (ex) {
+                    alert(ex.statusText);
+                    return false;
+                }
+
+
+            });
+
+    })
+</script>
